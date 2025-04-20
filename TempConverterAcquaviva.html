@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <button onclick="convertToCelsius()">Convert to Celsius</button>
+    <button onclick="convertToFahrenheit()">Convert to Fahrenheit</button>
+    
+    <script>
+        function convertToCelsius() {
+            // Ask the user for the temperature in Fahrenheit
+            let inputTemp = prompt('Enter the temperature in Fahrenheit:');
+            
+            // Check if the input is not null or an empty string
+            if (inputTemp !== null && inputTemp !== "") {
+                // Convert the input to a number using parseInt
+                let fahrenheit = parseInt(inputTemp);
+                
+                // Check if the conversion resulted in a valid number
+                if (!isNaN(fahrenheit)) {
+                    // Calculate Celsius
+                    let celsius = (fahrenheit - 32) * 5/9;
+                    
+                    // Display the result in an alert
+                    alert(fahrenheit + '°F is equal to ' + celsius.toFixed(2) + '°C');
+                } else {
+                    // Display an error message if the input is not a valid number
+                    alert('Invalid input. Please enter a valid number.');
+                }
+            } else {
+                // Display an error message if the input is null or empty
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+        
+        function convertToFahrenheit() {
+            // Ask the user for the temperature in Celsius
+            let inputTemp = prompt('Enter the temperature in Celsius:');
+            
+            // Check if the input is not null or an empty string
+            if (inputTemp !== null && inputTemp !== "") {
+                // Convert the input to a number using parseInt
+                let celsius = parseInt(inputTemp);
+                
+                // Check if the conversion resulted in a valid number
+                if (!isNaN(celsius)) {
+                    // Calculate Fahrenheit
+                    let fahrenheit = (celsius * 9/5) + 32;
+                    
+                    // Display the result in an alert
+                    alert(celsius + '°C is equal to ' + fahrenheit.toFixed(2) + '°F');
+                } else {
+                    // Display an error message if the input is not a valid number
+                    alert('Invalid input. Please enter a valid number.');
+                }
+            } else {
+                // Display an error message if the input is null or empty
+                alert('Invalid input. Please enter a valid number.');
+            }
+        }
+    </script>
+</body>
+</html>

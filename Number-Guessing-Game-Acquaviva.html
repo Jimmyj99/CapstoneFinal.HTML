@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game - Your Name</title>
+    <style>
+        /* This was for sure the most frustrating and time consuming part. Just wanted it to be clean & I did have to google to find the #container option */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #container {
+            background-color: #ffffff98;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Number Guessing Game</h1>
+            <p>Welcome! Your task is to guess the number between 1 and 100 within 7 attempts.</p>
+            <p>Attempts left: <span id="attempts">7</span></p>
+            <input type="number" id="guess" placeholder="Enter your guess">
+            <button onclick="checkGuess()">Submit Guess</button>
+            <p id="message"></p>
+            <p>High Score: <span id="highScore">N/A</span></p>
+            <button onclick="startNewGame()">Start New Game</button>
+        </div>
+
+    <script>
+        let secretNumber; // The random number to guess
+        let attemptsLeft; // Number of attempts remaining
+        let highScore = localStorage.getItem("highScore") || "N/A"; // Initialize high score from local storage -- This is not perfect but it's an attempt at the Extra Credit
+
+        // Function to start a new game
+        function startNewGame() {
+            secretNumber = Math.floor(Math.random() * 100) + 1; // Generate a random number between 1 and 100
+            attemptsLeft = 7; // Initialize attempts
+            document.getElementById("attempts").textContent = attemptsLeft; // Update attempts displayed to the user
+            document.getElementById("message").textContent = ""; // Clear the message
+            document.getElementById("highScore").textContent = highScore; // Display high score
+            document.getElementById("guess").value = ""; // Clear the guess input field
+        }
+
+        // Function to check the player's guess
+        function checkGuess() {
+            const guess = parseInt(document.getElementById("guess").value);
+
+            // Check if the guess is a valid number between 1 and 100
+            if (guess < 1 || guess > 100) {
+                document.getElementById("message").textContent = "Please enter a valid number between 1 and 100.";
+                return;
+            }
+
+            attemptsLeft--; // Decrement the number of attempts
+            document.getElementById("attempts").textContent = attemptsLeft; // Update attempts displayed
+
+            if (guess === secretNumber) {
+                document.getElementById("message").textContent = `Congratulations! You guessed the correct number in ${7 - attemptsLeft} attempts.`;
+                
+                // Update high score if it's the best so far -- Not perfect as I said. Sometimes it works sometimes it doesn't? Maybe it will work for you just fine; seems sporatic 
+                if (attemptsLeft < highScore || highScore === "N/A") {
+                    highScore = 7 - attemptsLeft;
+                    localStorage.setItem("highScore", highScore); // Store high score in local storage
+                }
+            } else if (attemptsLeft === 0) {
+                document.getElementById("message").textContent = `Game over! The correct number was ${secretNumber}.`; //Text to display when user does not guess correctly
+            } else {
+                const message = guess < secretNumber ? "Too low. Try again!" : "Too high. Try again!"; //Text to display if user is too high or too low on their guess
+                document.getElementById("message").textContent = message;
+            }
+        }
+
+        startNewGame(); // Start a new game when the page loads
+    </script>
+</body>
+</html>
