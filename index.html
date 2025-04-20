@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Programming Portfolio</title>
+  <title>James Acquaviva II - Programming Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -46,53 +46,55 @@
       color: #0066cc;
       text-decoration: none;
     }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #ddd;
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>My Interactive Programming Portfolio</h1>
+    <h1>James Acquaviva II - Interactive Programming Portfolio</h1>
   </header>
   <div class="container">
 
     <div class="card">
       <h2>HTML & CSS Sample</h2>
       <p>A responsive card layout demo using HTML and CSS.</p>
-      <iframe srcdoc="<style>div{font-family:sans-serif;text-align:center;padding:20px;background:#eee;border-radius:10px;}</style><div>Responsive Card</div>"></iframe>
+      <iframe srcdoc="<style>div{font-family:sans-serif;text-align:center;padding:20px;background:#eee;border-radius:10px;}<\/style><div>Responsive Card</div>"></iframe>
     </div>
 
     <div class="card">
       <h2>JavaScript Counter</h2>
       <p>A simple interactive counter using JavaScript.</p>
-      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><p id='num'>0</p><button onclick='num.innerText=+num.innerText+1'>Increment</button><script>const num=document.getElementById('num')</script></div>"></iframe>
+      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><p id='num'>0</p><button onclick='num.innerText=+num.innerText+1'>Increment</button><script>const num=document.getElementById('num')<\/script></div>"></iframe>
     </div>
 
     <div class="card">
-      <h2>Java (Console Output)</h2>
-      <p>Java Hello World program (display only).</p>
-      <pre><code>public class HelloWorld {
-  public static void main(String[] args) {
-    System.out.println("Hello, World!");
-  }
-}</code></pre>
-    </div>
-
-    <div class="card">
-      <h2>C# (Console Output)</h2>
-      <p>C# Hello World program (display only).</p>
-      <pre><code>using System;
-class Program {
-  static void Main() {
-    Console.WriteLine("Hello, World!");
-  }
-}</code></pre>
+      <h2>Number Guessing Game</h2>
+      <p>A number guessing game written in JavaScript and HTML.</p>
+      <a class="code-link" href="file:///C:/Users/james/OneDrive/Desktop/VSCode1!/Number-Guessing-Game-Acquaviva.html">Open Number Guessing Game (local file)</a>
     </div>
 
     <div class="card">
       <h2>JavaScript Color Changer</h2>
       <p>Click the button to change the background color.</p>
-      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><button onclick='document.body.style.background=color()'>Change Color</button><script>function color(){return'#'+Math.floor(Math.random()*16777215).toString(16)}</script></div>"></iframe>
+      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><button onclick='document.body.style.background=color()'>Change Color</button><script>function color(){return'#'+Math.floor(Math.random()*16777215).toString(16)}<\/script></div>"></iframe>
+    </div>
+
+    <div class="card">
+      <h2>HTML + JS Live Clock</h2>
+      <p>A simple digital clock using JavaScript and HTML.</p>
+      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><p id='clock'></p><script>function updateClock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString();}setInterval(updateClock,1000);updateClock()<\/script></div>"></iframe>
     </div>
 
   </div>
+
+  <footer>
+    <p><a href="3d89818d-a41a-45d4-b6d2-75d20ef45246.pdf" download>Download My Resume (PDF)</a></p>
+  </footer>
 </body>
 </html>
+
