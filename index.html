@@ -33,7 +33,7 @@
     }
     iframe {
       width: 100%;
-      height: 200px;
+      height: 250px;
       border: none;
       margin-top: 1rem;
     }
@@ -63,31 +63,31 @@
     <div class="card">
       <h2>HTML & CSS Sample</h2>
       <p>A responsive card layout demo using HTML and CSS.</p>
-      <iframe srcdoc="<style>div{font-family:sans-serif;text-align:center;padding:20px;background:#eee;border-radius:10px;}<\/style><div>Responsive Card</div>"></iframe>
+      <iframe srcdoc="<style>body{font-family:sans-serif;background:#eee;padding:20px;}div{background:#fff;border-radius:10px;padding:20px;box-shadow:0 0 10px rgba(0,0,0,0.1);text-align:center;}<\/style><body><div>Responsive Card</div></body>"></iframe>
     </div>
 
     <div class="card">
       <h2>JavaScript Counter</h2>
       <p>A simple interactive counter using JavaScript.</p>
-      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><p id='num'>0</p><button onclick='num.innerText=+num.innerText+1'>Increment</button><script>const num=document.getElementById('num')<\/script></div>"></iframe>
+      <iframe srcdoc="<body style='text-align:center;font-family:sans-serif'><p id='num'>0</p><button onclick='num.innerText=+num.innerText+1'>Increment</button><script>const num=document.getElementById('num')<\/script></body>"></iframe>
     </div>
 
     <div class="card">
       <h2>Number Guessing Game</h2>
-      <p>A number guessing game written in JavaScript and HTML.</p>
-      <a class="code-link" href="file:///C:/Users/james/OneDrive/Desktop/VSCode1!/Number-Guessing-Game-Acquaviva.html">Open Number Guessing Game (local file)</a>
+      <p>Try to guess the number between 1 and 100 in 7 attempts.</p>
+      <iframe src="Number-Guessing-Game-Acquaviva.html"></iframe>
     </div>
 
     <div class="card">
       <h2>JavaScript Color Changer</h2>
       <p>Click the button to change the background color.</p>
-      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><button onclick='document.body.style.background=color()'>Change Color</button><script>function color(){return'#'+Math.floor(Math.random()*16777215).toString(16)}<\/script></div>"></iframe>
+      <iframe srcdoc="<body style='text-align:center;font-family:sans-serif'><button onclick='document.body.style.background=color()'>Change Color</button><script>function color(){return'#'+Math.floor(Math.random()*16777215).toString(16)}<\/script></body>"></iframe>
     </div>
 
     <div class="card">
-      <h2>HTML + JS Live Clock</h2>
-      <p>A simple digital clock using JavaScript and HTML.</p>
-      <iframe srcdoc="<div style='text-align:center;font-family:sans-serif'><p id='clock'></p><script>function updateClock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString();}setInterval(updateClock,1000);updateClock()<\/script></div>"></iframe>
+      <h2>JavaScript Live Clock</h2>
+      <p>A digital clock using JavaScript and HTML.</p>
+      <iframe srcdoc="<body style='text-align:center;font-family:sans-serif'><p id='clock'></p><script>function updateClock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString();}setInterval(updateClock,1000);updateClock()<\/script></body>"></iframe>
     </div>
 
   </div>
@@ -97,4 +97,5 @@
   </footer>
 </body>
 </html>
+
 
