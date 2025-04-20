@@ -81,13 +81,13 @@
     <div class="card">
       <h2>JavaScript Color Changer</h2>
       <p>Click the button to change the background color.</p>
-      <iframe srcdoc="<body style='text-align:center;font-family:sans-serif'><button onclick='document.body.style.background=color()'>Change Color</button><script>function color(){return'#'+Math.floor(Math.random()*16777215).toString(16)}<\/script></body>"></iframe>
+      <iframe srcdoc="<html><body style='text-align:center;font-family:sans-serif'><button onclick='document.body.style.backgroundColor = getRandomColor()'>Change Color</button><script>function getRandomColor(){return'#'+Math.floor(Math.random()*16777215).toString(16)}<\/script></body></html>"></iframe>
     </div>
 
-    <div class="card">
+   <div class="card">
       <h2>JavaScript Live Clock</h2>
       <p>A digital clock using JavaScript and HTML.</p>
-      <iframe srcdoc="<body style='text-align:center;font-family:sans-serif'><p id='clock'></p><script>function updateClock(){document.getElementById('clock').textContent=new Date().toLocaleTimeString();}setInterval(updateClock,1000);updateClock()<\/script></body>"></iframe>
+      <iframe srcdoc="<html><body style='text-align:center;font-family:sans-serif'><h2 id='clock'></h2><script>function updateClock(){document.getElementById('clock').textContent = new Date().toLocaleTimeString();} setInterval(updateClock, 1000); updateClock();<\/script></body></html>"></iframe>
     </div>
 
   </div>
